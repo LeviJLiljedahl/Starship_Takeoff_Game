@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    alert("Starship Takeoff")
+
+    let count = 0;
+
+    count = Number(count)
+    let G = (Math.floor(Math.random() * 20 + 1))
+    let W = (Math.floor(Math.random() *40 + 1))
+    var R = G * W
+
+    let guess = "guesses"
+
+    alert("You have crash landed on a hostile alien planet. Your ship has been totalled.")
+    alert("You have managed to capture an alien ship in order to escape.")
+    alert("But to safely escape you need need to tell the ship the amount of force to use to propel it into flight based on the planet's gravity.")
+    alert("If you enter too little of force, the ship won't launch, too high and the ships fail safe kicks in and prevents launch as well, only the exact amount will do. Good Luck!")
+    alert("The aliens are closing in on you. You only have enough time for 10 guesses until aliens reach you, Good Luck!")
+
+    alert("The Planet's current Gravity = " + G)
+    // alert("r = " + R)
+
+    while (count < 10) {
+      var F = prompt("Type in Force")
+      count++
+
+      if (count > 1) {
+        guess = "guess"
+      }
+
+      if (F > R) {
+        alert("Too High. You have " + (10 - count) + " " + guess + " left.")
+      } else if (F < R) {
+        alert("Too Low. You have " + (10 - count) + " " + guess + " left.")
+      } else if (F == R) {
+        alert("Good Take Off")
+        break;
+      }
+    }
+
+    if (count == 10 && F != R) {
+      alert("You have ran out of guesses! The correct force was " + R)
+      document.write("<h1>You have been captured by the aliens. Game Over!</h1>")
+    } else {
+      document.write("<h1>Congratulations, you have escaped and are headed home!")
+    }
+  </script>
+</body>
+</html>
